@@ -4,7 +4,7 @@
 
 1. **Ensure Prerequisites**: Confirm that you have Git installed on your system to clone the repository. Also, ensure that you have Apache (or your preferred web server) installed and running on your Linux machine.
 
-2. **Identify the Project Repository**: Locate the GitHub URL of the web project you wish to deploy. This URL is necessary for downloading the project files to your local machine.
+2. **Identify the Project Repository**: Locate the GitHub URL of the web project you wish to deploy. This URL is necessary for downloading the project files to your local machine. (git-repo)[https://github.com/emortoo/apache-httpd.git]
 
 ### Step 2: Download the Project
 
