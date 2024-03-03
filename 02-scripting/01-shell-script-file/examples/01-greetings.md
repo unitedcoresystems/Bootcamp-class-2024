@@ -4,7 +4,7 @@ Certainly! Here's how you can create the script using `vi`, a widely-used text e
 Open the terminal and type the following command to create a new file and start editing it with `vi`:
 
 ```bash
-vi list_contents.sh
+vi greetings.sh
 ```
 
 ### Step 2: Enter Insert Mode
@@ -21,7 +21,11 @@ Now type in the shebang line to specify the shell interpreter:
 On a new line, type in the command that lists the contents:
 
 ```bash
-ls -l
+echo "Good morning Engineers"
+whoami
+echo "Welcome to United Core systems"
+echo "Today is" 
+date
 ```
 
 ### Step 5: Save and Exit
@@ -34,14 +38,14 @@ To save the file and exit `vi`, you need to go back to "normal" mode and type in
 Before running the script, you must make it executable. In the terminal, type:
 
 ```bash
-chmod +x list_contents.sh
+chmod +x greetings.sh
 ```
 
 ### Step 7: Run the Script
 Finally, execute the script by typing:
 
 ```bash
-./list_contents.sh
+./greetings.sh
 ```
 
 This will display a detailed list of all files and directories in the current directory. If you encounter any issues with permissions, make sure you're in a directory where you have appropriate rights, or consider running the script with `sudo` if it's appropriate for your permissions setup.
