@@ -47,26 +47,14 @@
         Demo5: zsh -c ls
 
 ## Comments 
-How to make your codes/scripts, easily readable/understandable 
-================================================
+      
+      How to make your codes/scripts, easily readable/understandable 
 
       1. It make your script/code to be understood by you and others over time. 
       2. It make your script/code easily reusable in the future
       3. Facilitate/ease troubleshooting and debugging
       4. comments are Good for teams: Team of 14 
 
-Hands on - practice 
-=====================================
-
-    Real world example, Tasks:
-
-      Updating a web server 
-      1. Remove all exiting files   
-      2. Clone a repository from github 
-      3. Copy creating index.html file  
-      3. assign read Permission to index.html file
-      4. changing ownership of index.html file 
-      5. copy the file to the app directory
 
 ## Naming Convention 
 
