@@ -27,6 +27,8 @@ Your `vi` editor should now have the following:
 ```bash
 #!/bin/bash
 echo "Hello, World!"
+echo "my name is Eli and i love Devops"
+echo "Come learn with me"
 ```
 
 ### Step 4: Save the Script
