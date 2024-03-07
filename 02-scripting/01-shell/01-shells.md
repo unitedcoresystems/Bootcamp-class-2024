@@ -27,9 +27,13 @@ For CentOS, Fedora, or RHEL:
 
 ```bash
 sudo yum install zsh ksh tcsh -y
-sudo apt install zsh ksh tcsh -y
 ```
 
+For Debian and ubuntu:
+
+```bash
+sudo apt install zsh ksh tcsh -y
+``` 
 ## How to Check the Shells in a Linux OS
 
 - **Demo1**: Lists your current shell.

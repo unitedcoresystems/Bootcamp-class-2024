@@ -10,3 +10,4 @@ echo "Please enter your name"
 read name   
 # welcome the customer to our bank 
 echo "$name, Welcome to Bank of America"  
+
