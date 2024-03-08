@@ -29,7 +29,7 @@ To redirect both stdout and stderr to the same file, you can use `&>` followed b
 Example:
 
 ```bash
-./yourscript.sh &> output_and_errors.txt
+sh script.sh &> output_and_errors.txt
 ```
 
 This command runs `yourscript.sh` and directs both the output (stdout) and the error messages (stderr) to `output_and_errors.txt`.
