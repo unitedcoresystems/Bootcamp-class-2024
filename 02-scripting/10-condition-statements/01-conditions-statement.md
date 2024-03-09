@@ -16,7 +16,6 @@ or
 
 ```bash
 if [ condition ]; then 
-then
     # code to execute if condition is true
 fi
 ```
