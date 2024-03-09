@@ -4,15 +4,63 @@ Conditional statements in Bash are a fundamental part of scripting that allow yo
 
 Here's the basic syntax:
 
+if statements Syntax:
 ```bash
-if [ condition ]; then
+if [ condition ] or (( conditions ))
+then
     # code to execute if condition is true
-else
-    # code to execute if condition is false
 fi
 ```
 
+or 
+
+```bash
+if [ condition ]; then 
+then
+    # code to execute if condition is true
+fi
+```
+
+if else statements Syntax:
+ 
+```bash  
+  if [ conditions ]  or (( conditions ))
+  then 
+  commands 
+  else
+  commands
+  fi 
+```
+
+if else elif statements Syntax:
+
+```bash 
+ if [ conditions ]  or (( conditions ))
+  then 
+  commands 
+  else
+  commands
+  elif [ conditions ]  or (( conditions ))
+  then 
+  Command
+  fi 
+```
 And here's an example of a script using `if/else`:
+
+```bash 
+#!/bin/bash 
+# This script determines if you are eligible to be admitted 
+echo "How much did you pay"
+read price
+if [ $price -ge 1200 ]
+then
+echo "you are admitted"
+elif [ $price -lt 1200 ]
+then
+echo " you have a balance of $((1200 - $price)) "
+echo "Request for an invoice to settle your balance "
+fi
+```
 
 ```bash
 #!/bin/bash

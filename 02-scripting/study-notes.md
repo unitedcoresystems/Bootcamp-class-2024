@@ -122,6 +122,7 @@ sh calculator.sh add 5 3
 
 sh calculator.sh divide 2 8 
        $0          $1  $2 $3 
+       
 
 echo "The name of the script is $0"
 echo "The 1st argument is $1"
