@@ -7,7 +7,6 @@ if [ "$#" -ne 3 ]; then
     exit 1
 fi
 
-<<'comment' 
 name=$1
 group=$2
 sudo_access=$3
@@ -54,5 +53,3 @@ fi
 #5 check if user and group has been created
 echo "$name has been created sucessfully"
 id $name
-
-comment 
