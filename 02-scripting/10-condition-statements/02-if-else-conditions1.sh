@@ -1,16 +1,12 @@
 #!/bin/bash
 
-# Define two variables
-a=$1
-b=$2
+echo "Please enter a number: "
+read num
 
-# Check the values of the variables
-if [ "$a" -lt 10 ]; then
-    if [ "$b" -gt 15 ]; then
-        echo "Variable a is less than 10 and b is greater than 15."
-    else
-        echo "Variable a is less than 10 and b is not greater than 15."
-    fi
+if [ $num -gt 0 ]; then
+  echo "$num is positive"
+elif [ $num -lt 0 ]; then
+  echo "$num is negative"
 else
-    echo "Variable a is not less than 10."
+  echo "$num is zero"
 fi
