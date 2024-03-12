@@ -32,6 +32,20 @@ while [[ $i -le 10 ]] ; do
   (( i += 1 ))
 done
 ```
+Expected output:
+================
+a = 1 
+a = 1 + 1 = 2 
+a = 2 + 1 = 3
+a = 3 + 1 = 4 
+a = 4 + 1 = 5
+a = 5 + 1 = 6 
+a = 6 + 1 = 7 
+a = 7 + 1 = 8
+a = 8 + 1 = 9 
+a = 9 + 1 = 10
+loop breaks here 
+a = 10 + 1 = 11 
 
 This script initializes a counter to 0 and then enters a `while` loop, which continues as long as the counter is less than 10. Inside the loop, it prints the current value of the counter and then increments the counter by 1. When the counter reaches 10, the condition `[ $counter -lt 10 ]` becomes false, and the loop exits.
 
