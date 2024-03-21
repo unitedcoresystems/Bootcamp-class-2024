@@ -38,22 +38,25 @@ sudo curl -O https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-
 sudo tar -xvzf apache-maven-3.9.6-bin.tar.gz
 sudo rm -rf apache-maven-3.9.6-bin.tar.gz
 sudo mv apache-maven-3.9.6/ maven
-
+```
 
 #### 3. Set environmental variable  - for specific user eg. ec2-user
 ``` sh
 vi ~/.bash_profile
 ```
+
 #### 4. Insect the script below under first line "# .bash_profile" 
 ``` sh
 export M2_HOME=/opt/maven
 export PATH=$PATH:$M2_HOME/bin
 ```
+
 #### 5. Refresh the profile file and Verify if maven is running
 ```sh
 source ~/.bash_profile
 mvn --version
 ```
+
 # Generate Project Template file 
 
 
