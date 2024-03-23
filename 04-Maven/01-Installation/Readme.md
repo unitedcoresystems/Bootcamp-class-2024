@@ -25,7 +25,7 @@ sudo su - ec2-user
 #### 2a. Download, extract and Install Maven zip file 
 ``` sh
 cd /opt
-sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.6-bin.zip
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip
 sudo unzip apache-maven-3.9.6-bin.zip
 sudo rm -rf apache-maven-3.9.6-bin.zip
 sudo mv apache-maven-3.9.6 maven
@@ -34,7 +34,7 @@ sudo mv apache-maven-3.9.6 maven
 #### 2b. Download, extract and Install Maven tar file 
 ``` sh
 cd /opt
-sudo curl -O https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+sudo curl -O https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-tar.gz
 sudo tar -xvzf apache-maven-3.9.6-bin.tar.gz
 sudo rm -rf apache-maven-3.9.6-bin.tar.gz
 sudo mv apache-maven-3.9.6/ maven
