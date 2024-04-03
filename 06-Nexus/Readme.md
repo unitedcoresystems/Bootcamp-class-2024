@@ -48,6 +48,7 @@ sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
 ```
 #### 7. Enable and start the nexus services
 ```sh
+sudo systemctl daemon-reload
 sudo systemctl enable nexus
 sudo systemctl start nexus
 sudo systemctl status nexus
