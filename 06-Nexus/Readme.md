@@ -20,8 +20,8 @@ sudo echo "nexus ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/nexus
 ```
 #### 2. install Java JDK 11+ as a prerequisit for nexus to run.
 ```sh
-sudo yum install wget nano tree unzip git-all -y
-sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
+sudo yum install wget vim tree unzip git-all -y
+sudo yum install java-1.8.0-openjdk-devel -y
 ```
 #### 3. Download, extract and Install Nexus
 ```sh
