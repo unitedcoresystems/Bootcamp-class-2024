@@ -26,10 +26,10 @@ sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 #### 3. Download, extract and Install Nexus
 ```sh
 cd /opt
-sudo wget http://download.sonatype.com/nexus/3/nexus-3.61.0-02-unix.tar.gz 
-sudo tar -zxvf nexus-3.61.0-02-unix.tar.gz
-sudo mv /opt/nexus-3.61.0-02 /opt/nexus
-sudo rm -rf nexus-3.61.0-02-unix.tar.gz
+sudo wget https://download.sonatype.com/nexus/3/nexus-3.67.0-03-unix.tar.gz
+sudo tar -zxvf nexus-3.67.0-03-unix.tar.gz
+sudo mv /opt/nexus-3.67.0-03 /opt/nexus
+sudo rm -rf nexus-3.67.0-03-unix.tar.gz
 ```
 #### 4. Set set ownership permissions to nexus 
 ```sh
