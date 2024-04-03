@@ -46,7 +46,29 @@ sudo echo  'run_as_user="nexus" ' > /opt/nexus/bin/nexus.rc
 ```sh
 sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
 ```
-#### 7. Enable and start the nexus services
+
+#### 7. Create a service file for Nexus
+```sh
+cat > /etc/systemd/system/nexus.service <<EOF
+[Unit]
+Description=Nexus service
+After=network.target
+
+[Service]
+Type=forking
+LimitNOFILE=65536
+ExecStart=/etc/init.d/nexus start
+ExecStop=/etc/init.d/nexus stop 
+User=nexus
+Restart=on-abort
+TimeoutSec=600
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+#### 8. Enable and start the nexus services
 ```sh
 sudo systemctl daemon-reload
 sudo systemctl enable nexus

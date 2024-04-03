@@ -39,7 +39,7 @@ After=network.target
 Type=forking
 LimitNOFILE=65536
 ExecStart=/etc/init.d/nexus start
-ExecStop=/etc/init.d/nexus stopsudo 
+ExecStop=/etc/init.d/nexus stop 
 User=nexus
 Restart=on-abort
 TimeoutSec=600
@@ -52,3 +52,4 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable nexus.service
 sudo systemctl start nexus.service
+sudo systemctl status nexus.service
