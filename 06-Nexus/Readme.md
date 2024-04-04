@@ -28,7 +28,7 @@ sudo yum install java-1.8.0-openjdk-devel -y
 cd /opt
 sudo wget https://download.sonatype.com/nexus/3/nexus-3.67.0-03-unix.tar.gz
 sudo tar -zxvf nexus-3.67.0-03-unix.tar.gz
-sudo mv /opt/nexus-3.67.0-03 /opt/nexus
+sudo mv nexus-3.67.0-03 nexus
 sudo rm -rf nexus-3.67.0-03-unix.tar.gz
 ```
 #### 4. Set set ownership permissions to nexus 
