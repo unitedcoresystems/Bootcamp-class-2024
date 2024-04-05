@@ -107,7 +107,46 @@ sudo cat /opt/sonatype-work/nexus3/admin.password
 	    </snapshotRepository>    
 </distributionManagement>
 ```
+## Maven Nexus integration 
 
+```
+sudo vi /opt/maven/conf/settings.xml
+```
+
+```
+ <server>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>admin123</password>
+</server>
+```
+
+```
+<servers>
+    <!-- server
+     | Specifies the authentication information to use when connecting to a particular server, identified by
+     | a unique name within the system (referred to by the 'id' attribute below).
+     |
+     | NOTE: You should either specify username/password OR privateKey/passphrase, since these pairings are
+     |       used together.
+     |
+    <server>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+    -->
+
+    <!-- Another sample, using keys to authenticate.
+    <server>
+      <id>siteServer</id>
+      <privateKey>/path/to/private/key</privateKey>
+      <passphrase>optional; leave empty if not used.</passphrase>
+    </server>
+    -->
+  </servers>
+
+```
 ## Creating repositories
 
 ### Login to Nexus using you public ip of your server as shown below into URL of a web browers:
