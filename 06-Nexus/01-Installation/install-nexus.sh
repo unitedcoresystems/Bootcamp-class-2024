@@ -41,8 +41,7 @@ LimitNOFILE=65536
 ExecStart=/etc/init.d/nexus start
 ExecStop=/etc/init.d/nexus stop 
 User=nexus
-Restart=on-abort
-TimeoutSec=600
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
