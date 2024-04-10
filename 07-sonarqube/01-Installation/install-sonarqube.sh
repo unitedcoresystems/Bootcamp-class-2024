@@ -8,7 +8,7 @@ sudo hostnamectl set-hostname sonarqube-server
 # Enable PasswordAuthentication in the server and install Java JDK 1.8+
 sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
 sudo systemctl restart sshd
-sudo yum install unzip wget git java-11-openjdk-devel -y
+sudo yum install unzip wget git java-17-openjdk -y
 
 # Download and extract the SonarQube Server software
 cd /opt
@@ -34,10 +34,13 @@ ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
 User=sonar
 Group=sonar
 Restart=always
+LimitNOFILE=131072
+LimitNPROC=8192
 
 [Install]
 WantedBy=multi-user.target
 EOF
+
 
 # Reload, enable and start the sonar service
 sudo systemctl daemon-reload
