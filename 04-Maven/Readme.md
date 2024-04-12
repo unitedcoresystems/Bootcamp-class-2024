@@ -56,17 +56,15 @@ export PATH=$PATH:$M2_HOME/bin
 source ~/.bash_profile
 mvn --version
 ```
-
-# Generate Project Template file 
-
+---
 
 # Configuration 
 
-### Nexus - Maven intergration 
+## Nexus - Maven intergration 
 
-#### 1.To configure nexus login credentials in `pom.xml` file
+### 1. To configure nexus login credentials in pom.xml file
 
-### Example `pom.xml` Configuration for Tomcat 7 Maven Plugin:
+#### Example `pom.xml` Configuration for Tomcat 7 Maven Plugin:
 
 ```xml
 <distributionManagement>
@@ -84,7 +82,7 @@ mvn --version
 </distributionManagement>
 ```
 
-#### 2. Edit and add credentials as shown below under commentted <server> </server> tag  
+### 2. Edit and add credentials as shown below under commentted <server> </server> tag  
 ```sh 
 sudo vi /opt/maven/conf/settings.xml          
 ```
@@ -96,11 +94,8 @@ sudo vi /opt/maven/conf/settings.xml
       <password>admin@123</password>
     </server>
 ```
-#### 3. Save and exit from settings.xml  
-$ esc :wq! 
-$ esc hold "Shift" +  ZZ
 
-### Usage:
+#### Usage:
 
 To deploy your application using this setup, you can run the following Maven command:
 
@@ -110,11 +105,11 @@ mvn deploy
 
 ## Tomcat - Maven intergration 
 
-#### 1. To configure a Maven project to deploy directly to a Tomcat server, you can use the `tomcat7-maven-plugin` or `tomcat8-maven-plugin`.
+### 1. To configure a Maven project to deploy directly to a Tomcat server, you can use the `tomcat7-maven-plugin` or `tomcat8-maven-plugin`.
 
 These plugins allow you to deploy your web applications to a Tomcat server directly from the Maven build lifecycle.
 
-### Example `pom.xml` Configuration for Tomcat 7 Maven Plugin:
+#### Example `pom.xml` Configuration for Tomcat 7 Maven Plugin:
 
 ```xml
 <project>
@@ -139,9 +134,9 @@ These plugins allow you to deploy your web applications to a Tomcat server direc
 </project>
 ```
 
-#### 2. Edit and add credentials as shown below under commentted <server> </server> tag 
+### 2. Edit and add credentials as shown below under commentted <server> </server> tag 
 
-### Example `settings.xml` Configuration:
+#### Example `settings.xml` Configuration:
 ```sh 
 sudo vi /opt/maven/conf/settings.xml          
 ```
@@ -160,7 +155,7 @@ sudo vi /opt/maven/conf/settings.xml
 </settings>
 ```
 
-### Usage:
+#### Usage:
 
 To deploy your application using this setup, you can run the following Maven command:
 
@@ -173,3 +168,47 @@ Or, if you are redeploying an already deployed application:
 ```bash
 mvn tomcat7:redeploy
 ```
+
+## Sonarqube - Maven intergration 
+
+### 1. To configure a Maven project to install sonar scanner in maven  server, you can use the `sonar-maven-plugin`.
+
+These plugins allow you to scan your web applications to a sonarqube server directly from the Maven build lifecycle.
+
+#### Example `pom.xml` Configuration for sonar Maven Plugin:
+
+```xml
+<build>
+  <pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.7.0.1746</version>
+      </plugin>
+    </plugins>
+  </pluginManagement>
+</build>
+```
+
+### 2. Edit Properties tag and add credentials as shown below under commentted <properties> </properties> tag 
+
+#### Example `pom.xml` Configuration:
+
+```xml
+   <properties>
+	   <sonar.host.url>http://<sonar-server-ip>:9000/</sonar.host.url>
+      <sonar.login>token</sonar.login>
+      <!-- <sonar.password>admin</sonar.password> -->
+    </properties>
+```
+
+#### Usage:
+
+To deploy your application using this setup, you can run the following Maven command:
+
+```bash
+mvn sonar:sonar
+```
+
+

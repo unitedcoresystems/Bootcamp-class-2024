@@ -43,6 +43,7 @@ sudo ln -s /opt/tomcat-9/bin/startup.sh /usr/bin/starttomcat
 sudo ln -s /opt/tomcat-9/bin/shutdown.sh /usr/bin/stoptomcat
 sudo starttomcat
 ```
+---
 
 # Configuration
 
@@ -75,32 +76,4 @@ sudo vi /opt/maven/conf/settings.xml
       <username>admin</username>
       <password>admin123</password>
  </server>
-```
-
-```
-<servers>
-    <!-- server
-     | Specifies the authentication information to use when connecting to a particular server, identified by
-     | a unique name within the system (referred to by the 'id' attribute below).
-     |
-     | NOTE: You should either specify username/password OR privateKey/passphrase, since these pairings are
-     |       used together.
-     |
-     -->
-    <server>
-      <id>tomcat</id>
-      <username>admin</username>
-      <password>admin123</password>
-    </server>
-    
-
-    <!-- Another sample, using keys to authenticate.
-    <server>
-      <id>siteServer</id>
-      <privateKey>/path/to/private/key</privateKey>
-      <passphrase>optional; leave empty if not used.</passphrase>
-    </server>
-    -->
-  </servers>
-
 ```
