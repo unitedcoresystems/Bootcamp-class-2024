@@ -43,3 +43,64 @@ sudo ln -s /opt/tomcat-9/bin/startup.sh /usr/bin/starttomcat
 sudo ln -s /opt/tomcat-9/bin/shutdown.sh /usr/bin/stoptomcat
 sudo starttomcat
 ```
+
+# Configuration
+
+## POM.XML 
+
+#### Edit URL in POM.xml file
+```sh
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://<tomcat-server-ip>:8080/manager/text</url>
+                    <server>tomcat</server>
+                    <path>/yourAppName</path>
+                  #   <username>admin</username>
+                  #   <password>password</password>
+                </configuration>
+            </plugin>
+```
+## Maven tomcat integration 
+
+```
+sudo vi /opt/maven/conf/settings.xml
+```
+
+```
+ <server>
+      <id>tomcat</id>
+      <username>admin</username>
+      <password>admin123</password>
+ </server>
+```
+
+```
+<servers>
+    <!-- server
+     | Specifies the authentication information to use when connecting to a particular server, identified by
+     | a unique name within the system (referred to by the 'id' attribute below).
+     |
+     | NOTE: You should either specify username/password OR privateKey/passphrase, since these pairings are
+     |       used together.
+     |
+     -->
+    <server>
+      <id>tomcat</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+    
+
+    <!-- Another sample, using keys to authenticate.
+    <server>
+      <id>siteServer</id>
+      <privateKey>/path/to/private/key</privateKey>
+      <passphrase>optional; leave empty if not used.</passphrase>
+    </server>
+    -->
+  </servers>
+
+```

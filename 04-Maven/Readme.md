@@ -64,12 +64,31 @@ mvn --version
 
 ### Nexus - Maven intergration 
 
-#### 1. Configure nexus login credentials in settings.xml file in the conf directory in the maven server 
+#### 1.To configure nexus login credentials in `pom.xml` file
+
+### Example `pom.xml` Configuration for Tomcat 7 Maven Plugin:
+
+```xml
+<distributionManagement>
+	    <repository>
+	      <id>nexus</id>
+	      <name>Nexus Releases Repository</name>
+	      <url>http://<nexus-server-ip>:8081/repository/release -repo-name>/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Nexus Snapshot Repository </name>
+	      <url>http://<nexus-server-ip>:8081/repository/snapshot-repo-name></url>
+	    </snapshotRepository>    
+</distributionManagement>
+```
+
+#### 2. Edit and add credentials as shown below under commentted <server> </server> tag  
 ```sh 
 sudo vi /opt/maven/conf/settings.xml          
 ```
 
-#### 2. Edit and add credentials as shown below under commentted <server> </server> tag  
 ```sh
    <server>
       <id>nexus</id>
@@ -80,3 +99,77 @@ sudo vi /opt/maven/conf/settings.xml
 #### 3. Save and exit from settings.xml  
 $ esc :wq! 
 $ esc hold "Shift" +  ZZ
+
+### Usage:
+
+To deploy your application using this setup, you can run the following Maven command:
+
+```bash
+mvn deploy
+```
+
+## Tomcat - Maven intergration 
+
+#### 1. To configure a Maven project to deploy directly to a Tomcat server, you can use the `tomcat7-maven-plugin` or `tomcat8-maven-plugin`.
+
+These plugins allow you to deploy your web applications to a Tomcat server directly from the Maven build lifecycle.
+
+### Example `pom.xml` Configuration for Tomcat 7 Maven Plugin:
+
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>TomcatServer</server>
+                    <path>/yourAppName</path>
+                    <!-- <username>admin</username>
+                    <password>password</password> -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+
+#### 2. Edit and add credentials as shown below under commentted <server> </server> tag 
+
+### Example `settings.xml` Configuration:
+```sh 
+sudo vi /opt/maven/conf/settings.xml          
+```
+
+```xml
+<settings>
+    ...
+    <servers>
+        <server>
+            <id>TomcatServer</id>
+            <username>admin</username>
+            <password>password</password>
+        </server>
+    </servers>
+    ...
+</settings>
+```
+
+### Usage:
+
+To deploy your application using this setup, you can run the following Maven command:
+
+```bash
+mvn tomcat7:deploy
+```
+
+Or, if you are redeploying an already deployed application:
+
+```bash
+mvn tomcat7:redeploy
+```
