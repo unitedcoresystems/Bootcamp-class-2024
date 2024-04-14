@@ -8,7 +8,7 @@
 + AWS Acccount - Luanch an [ec2 instance](../EC2_Instances/README.md)
 + Create Security Group and open Required ports.
    + 22 ..etc
-+ Create EC2 T2.micro Instance with 2GB of RAM.
++ Create EC2 T2.small Instance with 2GB of RAM.
 + Attach Security Group to EC2 Instance.
 + Install java openJDK 1.8+
 
