@@ -87,11 +87,11 @@ mvn --version
 sudo vi /opt/maven/conf/settings.xml          
 ```
 
-```sh
+```xml
    <server>
       <id>nexus</id>
       <username>admin</username>
-      <password>admin@123</password>
+      <password>password</password>
     </server>
 ```
 
@@ -112,26 +112,18 @@ These plugins allow you to deploy your web applications to a Tomcat server direc
 #### Example `pom.xml` Configuration for Tomcat 7 Maven Plugin:
 
 ```xml
-<project>
-    ...
-    <build>
-        <plugins>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
-                    <server>TomcatServer</server>
+                    <server>tomcat</server>
                     <path>/yourAppName</path>
                     <!-- <username>admin</username>
                     <password>password</password> -->
                 </configuration>
             </plugin>
-        </plugins>
-    </build>
-    ...
-</project>
 ```
 
 ### 2. Edit and add credentials as shown below under commentted <server> </server> tag 
@@ -142,17 +134,11 @@ sudo vi /opt/maven/conf/settings.xml
 ```
 
 ```xml
-<settings>
-    ...
-    <servers>
         <server>
-            <id>TomcatServer</id>
+            <id>tomcat</id>
             <username>admin</username>
             <password>password</password>
         </server>
-    </servers>
-    ...
-</settings>
 ```
 
 #### Usage:
@@ -178,17 +164,11 @@ These plugins allow you to scan your web applications to a sonarqube server dire
 #### Example `pom.xml` Configuration for sonar Maven Plugin:
 
 ```xml
-<build>
-  <pluginManagement>
-    <plugins>
       <plugin>
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
         <version>3.7.0.1746</version>
       </plugin>
-    </plugins>
-  </pluginManagement>
-</build>
 ```
 
 ### 2. Edit Properties tag and add credentials as shown below under commentted <properties> </properties> tag 
@@ -196,11 +176,9 @@ These plugins allow you to scan your web applications to a sonarqube server dire
 #### Example `pom.xml` Configuration:
 
 ```xml
-   <properties>
 	   <sonar.host.url>http://<sonar-server-ip>:9000/</sonar.host.url>
       <sonar.login>token</sonar.login>
       <!-- <sonar.password>admin</sonar.password> -->
-    </properties>
 ```
 
 #### Usage:

@@ -47,33 +47,31 @@ sudo starttomcat
 
 # Configuration
 
-## POM.XML 
+### 1. Add users and credentials as shown below under commentted <tomcat-users> </tomcat-users> tag 
 
-#### Edit URL in POM.xml file
-```sh
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <url>http://<tomcat-server-ip>:8080/manager/text</url>
-                    <server>tomcat</server>
-                    <path>/yourAppName</path>
-                  #   <username>admin</username>
-                  #   <password>password</password>
-                </configuration>
-            </plugin>
+#### Example `tomcat-users.xml` Configuration:
+```sh 
+sudo vi /opt/tomcat-9/conf/tomcat-users.xml          
 ```
-## Maven tomcat integration 
+Add user and credentials 
 
-```
-sudo vi /opt/maven/conf/settings.xml
+```xml 
+<user username="admin" password="admin123" roles="manager-gui,manager-script, manager-status"/>
 ```
 
+### 2. Disable remote access from localhost to allow all  
+
+#### Example `context.xml` Configuration:
+```sh 
+sudo vi /opt/tomcat-9/webapps/manager/META-INF/context.xml          
 ```
- <server>
-      <id>tomcat</id>
-      <username>admin</username>
-      <password>admin123</password>
- </server>
+replace this line 
+`<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />` 
+
+with this 
+
+```xml 
+<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+       allow=".*" />
 ```

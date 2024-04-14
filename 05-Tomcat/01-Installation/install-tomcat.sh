@@ -20,7 +20,7 @@ sudo useradd --system --shell /bin/false tomcat
 
 # Set ownership and permissions for the Tomcat directory
 sudo chown -R tomcat:tomcat /opt/tomcat-9
-sudo chmod -R 755 /opt/tomcat-9
+sudo chmod -R 777 /opt/tomcat-9
 
 # Create a systemd service file for Tomcat
 sudo tee /etc/systemd/system/tomcat.service <<EOF
